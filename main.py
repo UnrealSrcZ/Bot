@@ -3,7 +3,11 @@ from discord.ext import commands
 import requests
 import json
 
-bot = commands.Bot(command_prefix='?!')
+intents = discord.Intents.default()
+intents.typing = False
+intents.presences = False
+
+bot = commands.Bot(command_prefix='?!', intents=intents)
 
 @bot.event
 async def on_ready():
@@ -38,4 +42,4 @@ async def locmyip(ctx, ip_address: str):
 
     await ctx.send(embed=embed)
 
-bot.run('YOUR_BOT_TOKEN')
+bot.run('MTE4Nzc4MTEzNjIwMjYxMjg0OQ.GubsuD.I5H9Wq2tKrCoTYvCxGRznqTmg9y00ZAfVE2mN8')
